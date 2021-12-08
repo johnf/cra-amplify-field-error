@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "paths": {
+    "/users": {
+      "name": "/users",
+      "lambdaFunction": "reactamplifiedce07541b",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update"
+        ]
+      }
+    }
+  }
+}

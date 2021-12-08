@@ -1,0 +1,18 @@
+# Auth Summary
+# * Owner can only update name and pushToken
+# * Lambda can do whatever it wants
+type User
+  @model(subscriptions: { level: off })
+  @auth(rules: [{ allow: owner, ownerField: "ownerId", operations: [read] }])
+{
+  id: ID!
+  # GOOD
+  # name: String! @auth(rules: [{ allow: owner, ownerField: "ownerId", operations: [read, update] }])
+  # BAD
+  name: String! @auth(rules: [{ allow: owner, ownerField: "ownerId", operations: [read, update] }, { allow: private, operations: [read] }])
+  mobile: AWSPhone!
+  email: AWSEmail!
+  pushToken: String @auth(rules: [{ allow: owner, ownerField: "ownerId", operations: [read, update] }])
+  ownerId: ID!
+
+}

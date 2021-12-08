@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "reactamplified",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authreactamplifiedd735c3b7",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2021-12-08T05:57:50.664Z"
+}
